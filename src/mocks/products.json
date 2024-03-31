@@ -11,7 +11,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct1.jpg",
+    "image": "../../src/assets/skinCareproduct1.jpg",
     "countInStock": 20
   },
   {
@@ -26,7 +26,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct2.jpg",
+    "image": "../../src/assets/skinCareproduct2.jpg",
     "countInStock": 20
   },
   {
@@ -41,7 +41,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct3.jpg",
+    "image": "../../src/assets/skinCareproduct3.jpg",
     "countInStock": 20
   },
   {
@@ -56,7 +56,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct4.jpg",
+    "image": "../../src/assets/skinCareproduct4.jpg",
     "countInStock": 20
   },
   {
@@ -71,7 +71,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct5.jpg",
+    "image": "../../src/assets/skinCareproduct5.jpg",
     "countInStock": 20
   },
   {
@@ -86,7 +86,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct6.jpg",
+    "image": "../../src/assets/skinCareproduct6.jpg",
     "countInStock": 20
   },
   {
@@ -101,7 +101,7 @@
       { "value": "250ml", "key": "option3" }
     ],
     "material": "material",
-    "image": "../assets/skinCareproduct7.jpg",
+    "image": "../../src/assets/skinCareproduct7.jpg",
     "countInStock": 20
   }
 ]
