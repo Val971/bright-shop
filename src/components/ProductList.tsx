@@ -25,12 +25,10 @@ export const ProductList: React.FC<ProductListProps> = () => {
     <div className='my-8 md:px-5'>
       {loading && <Loader variant='large' />}
       {error && <Message variant='danger'>{error}</Message>}
-      <div className='flex justify-center'>
-        <div className='grid grid-cols-2 md:grid-cols-3 gap-x-10 max-w-[1800px]'>
-          {productList?.products?.map((product) => {
-            return <Product product={product} key={product?.uuid} />;
-          })}
-        </div>
+      <div className='grid md:mx-96 md:gap-x-10 grid-cols-2 md:grid-cols-3 max-w-[1800px]'>
+        {productList?.products?.map((product) => {
+          return <Product product={product} key={product?.uuid} />;
+        })}
       </div>
     </div>
   );
