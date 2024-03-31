@@ -1,3 +1,7 @@
+import facebook from '../assets/facebook.png';
+import instagram from '../assets/instagram.png';
+import twitter from '../assets/twitter.png';
+
 export default function Contact() {
   return (
     <div
@@ -12,9 +16,9 @@ export default function Contact() {
         <p>hello-there@example.com</p>
       </div>
       <div className='flex gap-5'>
-        <img src='/src/assets/facebook.png' alt='facebook logo' />
-        <img src='/src/assets/instagram.png' alt='instagram logo' />
-        <img src='/src/assets/twitter.png' alt='twitter logo' />
+        <img src={facebook.src} alt='facebook logo' />
+        <img src={instagram.src} alt='instagram logo' />
+        <img src={twitter.src} alt='twitter logo' />
       </div>
     </div>
   );

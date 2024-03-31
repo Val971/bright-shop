@@ -11,7 +11,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
     <div className='my-3 md:p-3 rounded  '>
       <div className='md:bg-[#00000006]'>
         {' '}
-        <a href={`/product/${product._id}`}>
+        <a href={`/product/${product.uuid}`}>
           <div className='relative md:w-64 md:h-64 overflow-hidden'>
             <img
               src={product.image}
@@ -23,7 +23,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
       </div>
       <div className='p-3'>
         <a
-          href={`/product/${product._id}`}
+          href={`/product/${product.uuid}`}
           className='text-lg font-thin text-[#191919] hover:underline'>
           {product.name}
         </a>

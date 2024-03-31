@@ -3,7 +3,11 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { cart } from '../state/cart';
 import type { ICartItem } from '../state/cart';
 import { Button } from './Button';
-import { errorPlaceOrder, loadingPlaceOrder, placeOrderRequest } from '../state/order';
+import {
+  errorPlaceOrder,
+  loadingPlaceOrder,
+  placeOrderRequest,
+} from '../state/order';
 import { Loader } from './Loader';
 import { Message } from './Message';
 
@@ -27,7 +31,10 @@ export const PlaceOrder: React.FC<PlaceOrderProps> = () => {
 
   const priceSummation = useMemo(() => {
     const itemsPrice = formatWithDecimals(
-      (cartItems || [])?.reduce((cummulation, item) => cummulation + item.price * item.qty, 0)
+      (cartItems || [])?.reduce(
+        (cummulation, item) => cummulation + item.price * item.qty,
+        0
+      )
     );
 
     // Calculate shipping fee
@@ -36,7 +43,9 @@ export const PlaceOrder: React.FC<PlaceOrderProps> = () => {
     // calculate tax fee
     const taxFee = 0;
 
-    const totalPrice = formatWithDecimals(Number(itemsPrice) + Number(shippingFee) + Number(taxFee));
+    const totalPrice = formatWithDecimals(
+      Number(itemsPrice) + Number(shippingFee) + Number(taxFee)
+    );
 
     return {
       itemsPrice,
@@ -60,7 +69,15 @@ export const PlaceOrder: React.FC<PlaceOrderProps> = () => {
       Number(priceSummation?.totalPrice),
       priceSummation?.shippingFee
     );
-  }, [address, city, postalCode, country, paymentMethod, priceSummation, cartItems]);
+  }, [
+    address,
+    city,
+    postalCode,
+    country,
+    paymentMethod,
+    priceSummation,
+    cartItems,
+  ]);
 
   useEffect(() => {
     // Once Page loads prefill info from storage
@@ -92,27 +109,38 @@ export const PlaceOrder: React.FC<PlaceOrderProps> = () => {
       <div className='flex gap-6 justify-center'>
         <div className='w-full max-w-[500px] flex-1'>
           <div className='border-b-2 p-4'>
-            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>Shipping Address </h2>
+            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>
+              Shipping Address{' '}
+            </h2>
             <p className='text-gray-600'>
               {address}, {postalCode}, {city}, {country}.
             </p>
           </div>
           <div className='border-b-2 p-4'>
-            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>Payment Method </h2>
+            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>
+              Payment Method{' '}
+            </h2>
             <p className='text-gray-600 capitalize'>{paymentMethod}</p>
           </div>
           <div className='border-b-2 p-4'>
-            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>Order Items </h2>
+            <h2 className='text-xl md:text-2xl  pt-6 pb-2 mx-auto uppercase text-gray-700'>
+              Order Items{' '}
+            </h2>
 
             {cartItems?.map((cartItem, index) => (
-              <PlaceOrderItem cartItem={cartItem} key={`${cartItem?.name}${index}`} />
+              <PlaceOrderItem
+                cartItem={cartItem}
+                key={`${cartItem?.name}${index}`}
+              />
             ))}
           </div>
         </div>
 
         <div className='w-[400px] py-6'>
           <div className='  text-gray-700'>
-            <h2 className='text-xl md:text-2xl border-2   pb-2 mx-auto uppercase text-gray-700  p-4'>Order Summary</h2>
+            <h2 className='text-xl md:text-2xl border-2   pb-2 mx-auto uppercase text-gray-700  p-4'>
+              Order Summary
+            </h2>
           </div>
           <div className='border-2 border-t-0 flex justify-between text-gray-600 p-2 py-4'>
             <p>Items Price:</p>
@@ -134,9 +162,15 @@ export const PlaceOrder: React.FC<PlaceOrderProps> = () => {
             <Button
               size='small'
               type='button'
-              disabled={!address || !city || !postalCode || !country || !paymentMethod || loading}
-              onClick={handlePlaceOrder}
-            >
+              disabled={
+                !address ||
+                !city ||
+                !postalCode ||
+                !country ||
+                !paymentMethod ||
+                loading
+              }
+              onClick={handlePlaceOrder}>
               Place Order {loading && <Loader variant='small' />}
             </Button>
           </div>
@@ -164,7 +198,8 @@ const PlaceOrderItem: React.FC<PlaceOrderItemProps> = ({ cartItem }) => {
       </div>
 
       <div>
-        {cartItem?.qty} x ${cartItem?.price} = ${cartItem?.qty * cartItem?.price}
+        {cartItem?.qty} x ${cartItem?.price} = $
+        {cartItem?.qty * cartItem?.price}
       </div>
     </div>
   );

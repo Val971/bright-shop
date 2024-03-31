@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import newProdutImg from '../assets/newProdutImg.png';
 
 export default function ChooseUs() {
   const aboutUsRef = useRef<HTMLDivElement | null>(null);
@@ -7,12 +8,7 @@ export default function ChooseUs() {
       ref={aboutUsRef}
       id='about'
       className='bg-[#FCF9F8]  flex flex-col md:flex-row px-8 justify-center gap-20 items-center py-20'>
-      <img
-        alt='product img'
-        width='450'
-        height='450'
-        src='/src/assets/newProdutImg.png'
-      />
+      <img alt='product img' width='450' height='450' src={newProdutImg.src} />
       <div className='max-w-[25rem]'>
         <h2 className=' text-3xl md:text-4xl'>Why to choose our product</h2>
         <br />

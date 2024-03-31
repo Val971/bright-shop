@@ -1,3 +1,4 @@
+import newsletterImg from '../assets/newsletterImg.png';
 export default function Newsletter() {
   return (
     <div className='bg-[#FCF9F8] justify-center  flex flex-col-reverse md:flex-row  py-20 items-center'>
@@ -25,7 +26,7 @@ export default function Newsletter() {
         alt='hero image'
         width='150'
         height='150'
-        src={`/src/assets/newsletterImg.png`}
+        src={newsletterImg.src}
       />
     </div>
   );

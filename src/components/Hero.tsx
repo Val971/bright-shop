@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import HeroProduct1 from '../assets/HeroProduct1.png';
+import HeroProduct2 from '../assets/HeroProduct2.png';
+import herobg from '../assets/herobg.png';
 
 type HeroProps = {};
 
@@ -44,7 +47,7 @@ export const Hero: React.FC<HeroProps> = () => {
           className={
             'absolute z-10 mt-44 ml-8 md:mt-40 lg:mt-72 w-72 md:w-96 lg:w-auto'
           }
-          src={`/src/assets/HeroProduct1.png`}
+          src={HeroProduct1.src}
         />
 
         <motion.img
@@ -53,16 +56,16 @@ export const Hero: React.FC<HeroProps> = () => {
           transition={{ duration: 1 }} // Définissez la durée de l'animation
           alt='hero image'
           className={
-            'absolute ml-10 z-10 mt-5 md:top-60 md:right-96 lg:top-32 md:ml-auto w-72 md:w-96 lg:w-auto'
+            'absolute ml-10 z-10 mt-5 md:top-60  lg:top-32 md:ml-auto w-72 md:w-96 lg:w-auto'
           }
-          src={`/src/assets/HeroProduct2.png`}
+          src={HeroProduct2.src}
         />
         <img
           alt='hero image'
           className={`${
             animation ? 'opacity-1' : 'opacity-0'
           } w-[45rem] z-0 object-cover h-full transition-opacity duration-1000`}
-          src={`/src/assets/herobg.png`}
+          src={herobg.src}
         />
       </div>
     </div>

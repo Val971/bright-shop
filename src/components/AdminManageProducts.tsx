@@ -56,7 +56,9 @@ export const AdminManageProducts: React.FC<ManageProductsProps> = () => {
               <th className='text-left border-r-2 px-4 py-2'>Brand</th>
               <th className='text-left border-r-2 px-4 py-2'>Price</th>
               <th className='text-left border-r-2 px-4 py-2'>Category</th>
-              <th className='text-left border-r-2  px-4 py-2'>Count in stock</th>
+              <th className='text-left border-r-2  px-4 py-2'>
+                Count in stock
+              </th>
 
               <th className='text-left border-r-2 px-4 py-2'>Action</th>
             </tr>
@@ -64,26 +66,34 @@ export const AdminManageProducts: React.FC<ManageProductsProps> = () => {
           <tbody>
             {productList?.products?.map((product) => {
               return (
-                <tr className='capitalize border-b-2' key={product?._id}>
-                  <td className='text-left border-r-2 px-4 py-2'>{product?.name}</td>
-                  <td className='text-left border-r-2 px-4 py-2'>{product?.brand}</td>
-                  <td className='text-left border-r-2 px-4 py-2'>${product?.price}</td>
-                  <td className='text-left border-r-2 px-4 py-2'>{product?.category}</td>
-                  <td className='text-left border-r-2 px-4 py-2'>{product?.countInStock}</td>
+                <tr className='capitalize border-b-2' key={product?.uuid}>
+                  <td className='text-left border-r-2 px-4 py-2'>
+                    {product?.name}
+                  </td>
+                  <td className='text-left border-r-2 px-4 py-2'>
+                    {product?.brand}
+                  </td>
+                  <td className='text-left border-r-2 px-4 py-2'>
+                    ${product?.price}
+                  </td>
+                  <td className='text-left border-r-2 px-4 py-2'>
+                    {product?.category}
+                  </td>
+                  <td className='text-left border-r-2 px-4 py-2'>
+                    {product?.countInStock}
+                  </td>
 
                   <td className='text-left border-r-2 px-4 py-2'>
                     <span className='flex gap-4'>
                       <a
-                        href={`/product/${product?._id}`}
-                        className='bg-slate-900 text-white rounded px-4 py-2  w-full max-w-[100px] flex gap-3 justify-center  cursor-pointer hover:bg-slate-800 text-sm'
-                      >
+                        href={`/product/${product?.uuid}`}
+                        className='bg-slate-900 text-white rounded px-4 py-2  w-full max-w-[100px] flex gap-3 justify-center  cursor-pointer hover:bg-slate-800 text-sm'>
                         View
                       </a>
                       <button
-                        onClick={() => handleDelete(product?._id)}
+                        onClick={() => handleDelete(product?.uuid)}
                         disabled={loadingDelete}
-                        className='bg-red-900 text-white rounded px-4 py-2  w-full max-w-[100px] flex gap-3 justify-center  cursor-pointer hover:bg-red-800 text-sm'
-                      >
+                        className='bg-red-900 text-white rounded px-4 py-2  w-full max-w-[100px] flex gap-3 justify-center  cursor-pointer hover:bg-red-800 text-sm'>
                         Remove {loadingDelete && <Loader variant='small' />}
                       </button>
                     </span>

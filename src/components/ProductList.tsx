@@ -28,7 +28,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
       <div className='flex justify-center'>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-x-10 max-w-[1800px]'>
           {productList?.products?.map((product) => {
-            return <Product product={product} key={product?._id} />;
+            return <Product product={product} key={product?.uuid} />;
           })}
         </div>
       </div>

@@ -1,4 +1,7 @@
 import { useStore } from '@nanostores/react';
+import search from '../assets/search.png';
+import account from '../assets/account.png';
+import menu from '../assets/menu.png';
 import React, { useCallback, useEffect, useState } from 'react';
 import { FaCartPlus, FaSignOutAlt, FaUser, FaUsers } from 'react-icons/fa';
 import { FaTableList } from 'react-icons/fa6';
@@ -60,7 +63,7 @@ export const Header: React.FC<HeaderProps> = () => {
           </a>
 
           <div
-            className={`nav-links ${openMenu ? 'top-[9%]' : 'top-[-100%]'} ${
+            className={`nav-links ${openMenu ? 'top-[7%]' : 'top-[-100%]'} ${
               isHome ? 'bg-[#fff]' : 'bg-[#F9F9F9]'
             } duration-500 md:static z-20 h-full items-start md:items-center md:h-auto  absolute  md:min-h-fit min-h-[37vh] left-0  md:w-auto  w-full flex  px-5`}>
             <ul className='flex w-full md:flex-row mt-10 md:mt-auto flex-col md:items-center md:gap-[4vw] gap-8 font-semibold text-4xl md:text-base'>
@@ -83,9 +86,9 @@ export const Header: React.FC<HeaderProps> = () => {
           </div>
         </div>
         <div className='flex items-center gap-6'>
-          <img alt='icon search' src='/src/assets/search.png' />
+          <img alt='icon search' src={search.src} />
           <a href='/account/'>
-            <img alt='icon search' src='/src/assets/account.png' />
+            <img alt='icon search' src={account.src} />
           </a>
 
           <a href='/cart' className='flex items-center gap-1'>
@@ -103,7 +106,7 @@ export const Header: React.FC<HeaderProps> = () => {
             className='text-3xl cursor-pointer md:hidden'
             onClick={() => setOpenMenu(!openMenu)}
             alt='icon menu'
-            src='/src/assets/menu.png'
+            src={menu.src}
           />
         </div>
       </nav>

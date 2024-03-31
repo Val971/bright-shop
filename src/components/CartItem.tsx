@@ -11,13 +11,13 @@ export const CartItem: React.FC<ICartItem> = ({
   variation,
   id,
   qty,
-  _id,
+  uuid,
   countInStock,
 }) => {
   const [quantity, setQuantity] = useState<number | string>(qty);
 
   const handleCartQuantityUpdate = useCallback(async (quantity: string) => {
-    await addToCart(_id, Number(quantity), variation, true);
+    await addToCart(uuid, Number(quantity), variation, true);
   }, []);
 
   const handleRemoveFromCart = useCallback(async () => {
@@ -34,7 +34,7 @@ export const CartItem: React.FC<ICartItem> = ({
         </div>
         <div className='flex flex-col gap-2 w-full'>
           <div className='whitespace-nowrap'>
-            <a href={`/product/${_id}`}>
+            <a href={`/product/${uuid}`}>
               <p>{name}</p>
             </a>
           </div>

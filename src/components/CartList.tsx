@@ -54,7 +54,7 @@ export const CartList: React.FC<CartListProps> = () => {
             {cartItems?.map((cartItem) => {
               return (
                 <CartItem
-                  _id={cartItem._id}
+                  uuid={cartItem.uuid}
                   variation={cartItem.variation}
                   key={cartItem.id}
                   countInStock={cartItem?.countInStock}

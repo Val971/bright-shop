@@ -30,8 +30,8 @@ export const Featured: React.FC<FeaturedProps> = () => {
           .map((prod) => {
             return (
               <a
-                href={`/product/${prod._id}`}
-                key={prod._id}
+                href={`/product/${prod.uuid}`}
+                key={prod.uuid}
                 className='flex flex-col items-center'>
                 <img
                   className='mb-5 rounded-full h-32 '

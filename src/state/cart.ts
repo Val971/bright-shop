@@ -3,7 +3,7 @@ import { getProductRequest } from './products';
 
 export interface ICartItem {
   id: string;
-  _id: string;
+  uuid: string;
   qty: number;
   name: string;
   image: string;
@@ -50,7 +50,7 @@ export const addToCart = async (
 
     // Get existing cart iytem
     const existingCartItem = cartItems?.filter(
-      (item) => item._id === productResponse?._id
+      (item) => item.uuid === productResponse?.uuid
     );
 
     // Selected Cart item has been previously selected
@@ -72,7 +72,7 @@ export const addToCart = async (
       } else {
         newCartItem = {
           id: generateUniqueId(),
-          _id: productResponse._id,
+          uuid: productResponse.uuid,
           image: productResponse?.image,
           name: productResponse?.name,
           price: productResponse?.price,
@@ -92,7 +92,7 @@ export const addToCart = async (
       // Create a new cart item with data from server and also selected quantity
       newCartItem = {
         id: generateUniqueId(),
-        _id: productResponse._id,
+        uuid: productResponse.uuid,
         image: productResponse?.image,
         name: productResponse?.name,
         price: productResponse?.price,

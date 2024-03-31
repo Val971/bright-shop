@@ -14,7 +14,7 @@ export interface options {
 }
 
 export type IProduct = {
-  _id: string;
+  uuid: string;
   user?: any;
   name: string;
   image: string;
@@ -66,7 +66,12 @@ export const listProductRequest = async (keyword = '', pageNumber = '') => {
     // const response = await axios.get<ProductListRequest>(
     //   `${SERVER_URL}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     // );
-    fetch('/src/mocks/products.json')
+
+    fetch('/mocks/products.json', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         window.localStorage.setItem('products', JSON.stringify(data));
@@ -185,7 +190,9 @@ export const getProductRequest = async (
     //   ui && productGetState.set(response?.data);
     // }
     if (cachedProducts) {
-      const selected = cachedProducts.find((prod: IProduct) => prod._id === id);
+      const selected = cachedProducts.find(
+        (prod: IProduct) => prod.uuid === id
+      );
       productGetState.set(selected!);
       window.localStorage.setItem('selectedProductId', id);
       return selected;
@@ -193,7 +200,7 @@ export const getProductRequest = async (
       fetch('/src/mocks/products.json')
         .then((response) => response.json())
         .then((data) => {
-          const selected = data.find((prod: IProduct) => prod._id === id);
+          const selected = data.find((prod: IProduct) => prod.uuid === id);
           productGetState.set(selected);
           window.localStorage.setItem('selectedProductId', id);
           return data;

@@ -52,7 +52,6 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ id }) => {
   const handleAddToCart = useCallback(async () => {
     const formValues = getValues();
     const name = formValues.variation;
-    console.log(name);
     await addToCart(id, Number(formValues.quantity), formValues.variation);
   }, []);
 
@@ -63,7 +62,9 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ id }) => {
     const cartItem = cartItems?.find((cartItem) => cartItem?.id === id);
     setQty(cartItem?.qty || 1);
   }, [cartItems]);
-
+  if (product) {
+    console.log('test', product);
+  }
   return (
     <section>
       {errorProduct && <Message variant='danger'>{errorProduct}</Message>}
