@@ -49,7 +49,7 @@ const Hero = () => {
           transition: { duration: 1.5 },
           alt: "hero image",
           className: "absolute z-10 mt-44 ml-8 md:mt-40 lg:mt-72 w-72 md:w-96 lg:w-auto",
-          src: `/src/assets/HeroProduct1.png`
+          src: `../assets/HeroProduct1.png`
         }
       ),
       /* @__PURE__ */ jsx(
@@ -60,7 +60,7 @@ const Hero = () => {
           transition: { duration: 1 },
           alt: "hero image",
           className: "absolute ml-10 z-10 mt-5 md:top-60 md:right-96 lg:top-32 md:ml-auto w-72 md:w-96 lg:w-auto",
-          src: `/src/assets/HeroProduct2.png`
+          src: `src/assets/HeroProduct2.png`
         }
       ),
       /* @__PURE__ */ jsx(
@@ -68,7 +68,7 @@ const Hero = () => {
         {
           alt: "hero image",
           className: `${animation ? "opacity-1" : "opacity-0"} w-[45rem] z-0 object-cover h-full transition-opacity duration-1000`,
-          src: `/src/assets/herobg.png`
+          src: `../assets/herobg.png`
         }
       )
     ] })
