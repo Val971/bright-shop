@@ -1,0 +1,12 @@
+---
+import { Heading } from '../components/Heading';
+import { ProductList } from '../components/ProductList';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Astro Ecommerce' description='We sell high quality stuff'>
+  <div class='max-w-[1800px] mx-auto flex flex-col'>
+    <Heading text='Shop' variant='h1' textAlign='left' />
+    <ProductList client:load />
+  </div>
+</Layout>

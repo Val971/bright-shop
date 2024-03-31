@@ -1,0 +1,28 @@
+---
+import { Hero } from '../components/Hero';
+import  {Featured}  from '../components/Featured';
+import Layout from '../layouts/Layout.astro';
+import TestimonialBanner from '../components/TestimonialBanner';
+import Newsletter from '../components/Newsletter';
+import ChooseUs from '../components/ChooseUs';
+import Contact from '../components/Contact';
+import DeliveryInfos from '../components/DeliveryInfos';
+import Banner from '../components/Banner';
+---
+
+<Layout title='Astro Ecommerce' description='We sell high quality stuff'>
+  <div class=' mx-auto bg-[#FFF6EF]'>
+    <Hero client:load />
+    <Featured client:load />
+    <TestimonialBanner client:load/>
+		<ChooseUs client:load/>
+		<Newsletter client:load/>
+		<DeliveryInfos client:load/>
+		<Banner client:load/>
+		<Contact client:load/>
+		<div class='h-20 py-10 bg-black flex flex-col justify-center items-center'>
+			<p class="text-[#D4D4D4]">Bright serum skin care</p>
+			<p class="text-[#7C7C7C]">Report abuse</p>
+		</div>
+  </div>
+</Layout>

@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CartList } from '../components/CartList';
+---
+
+<Layout title='Cart Items' description='Cart Items'>
+  <div class='max-w-[1500px] mx-auto '>
+    <CartList client:load />
+  </div>
+</Layout>
